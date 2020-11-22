@@ -2,12 +2,26 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 const App = () => {
-  const anecdotes = useSelector(state => state)
-  const dispatch = useDispatch()
+
+  const anecdotes = useSelector(state => state);
+  const dispatch = useDispatch();
 
   const vote = (id) => {
-    console.log('vote', id)
+    console.log(id)
+    dispatch(
+      {
+        type: 'INCREASE VOTE',
+        data: { id }
+      }
+    )
   }
+
+  // const addVoteTo = (id) => {
+  //   return {
+  //     type: 'INCREASE VOTE',
+  //     data: { id }
+  //   }
+  // }
 
   return (
     <div>

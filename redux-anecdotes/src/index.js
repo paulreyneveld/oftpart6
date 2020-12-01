@@ -13,6 +13,6 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-// store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log(store.getState()))
 // store.dispatch(messageSelect(3))
 // store.dispatch(createAnecdote('New anecdote'))

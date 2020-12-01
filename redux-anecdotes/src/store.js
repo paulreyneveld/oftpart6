@@ -15,7 +15,7 @@ const store = createStore(
     )
 
 console.log(store.getState())
-store.dispatch(messageSelect(3))
-console.log(store.getState())
+// store.dispatch(messageSelect(3))
+// console.log(store.getState())
 
 export default store

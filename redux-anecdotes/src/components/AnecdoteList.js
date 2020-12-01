@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { addVote } from '../reducers/anecdoteReducer'
+import { messageSelect } from '../reducers/messageReducer'
 
 const AnecdoteList = () => {
     const anecdotes = useSelector(state => state.anecdotes);
@@ -12,6 +13,9 @@ const AnecdoteList = () => {
   
     const vote = (id) => {
       dispatch(addVote(id))
+      // This is where my efforts for 6.11 begin. The first step, sending a dispatch to update the 
+      // state in the store, works great. 
+      dispatch(messageSelect(id))
     }
     
     return (

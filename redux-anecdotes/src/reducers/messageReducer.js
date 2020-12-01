@@ -1,4 +1,4 @@
-const messageReducer = (state = 1, action) => {
+const messageReducer = (state = null, action) => {
     switch(action.type) {
         case 'SELECT_MESSAGE': {
             return action.searchFilter

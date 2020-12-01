@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux'
 import anecdoteReducer from './reducers/anecdoteReducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import messageReducer, { messageSelect } from './reducers/messageReducer'
+import messageReducer from './reducers/messageReducer'
 
 
 const reducer = combineReducers({
@@ -15,7 +15,6 @@ const store = createStore(
     )
 
 console.log(store.getState())
-// store.dispatch(messageSelect(3))
-// console.log(store.getState())
+
 
 export default store

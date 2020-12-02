@@ -30,11 +30,11 @@ export const addVote = (id) => {
   })
 }
 
-export const createAnecdote = (anecdoteContents) => {
+export const createAnecdote = (anecdote) => {
   return (
     {
       type: 'ADD_ANECDOTE',
-      data: { anecdoteContents }
+      data: { anecdote }
     }
   )
 }
@@ -46,11 +46,7 @@ export const initializeAnecdotes = (anecdotes) => {
   }
 }
 
-const initialState = anecdotesAtStart.map(asObject)
-
 const reducer = (state = [], action) => {
-  // console.log('state now: ', state)
-  // console.log('action', action)
   switch(action.type) {
     case 'INCREASE_VOTE': {
       const id = action.data.id;
@@ -65,14 +61,8 @@ const reducer = (state = [], action) => {
         item.id !== id ? item : updatedAnecdote)
     }
       case 'ADD_ANECDOTE':{
-        const content = action.data.anecdoteContents
-        console.log(content)
-        const newAnecdote = {
-          content,
-          id: getId(),
-          votes: 0
-        }
-        return state.concat(newAnecdote)
+        const content = action.data.anecdote
+        return state.concat(content)
       }
       case 'INIT_ANECDOTES':
         return action.data

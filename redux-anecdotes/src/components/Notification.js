@@ -15,8 +15,6 @@ const Notification = () => {
     return anecdotes.find(anecdote => anecdote.id === searchFilter)
   })
 
-  console.log(messageToDisplay)
-
   if (messageToDisplay) {
     setTimeout(() => dispatch(messageSelect(null)), 3000)
     return (

@@ -7,4 +7,17 @@ const getAll = async () => {
     return response.data
 }
 
-export default { getAll }
+const createNew = async (content) => {
+    const object = { content, votes: 0 }
+    const response = await axios.post(baseUrl, object)
+    return response.data
+}
+
+const updateVotes = async (id, newVoteNumber) => {
+    console.log(newVoteNumber)
+    const updatedObject = { votes: newVoteNumber }
+    const response = axios.patch(`${baseUrl}/${id}`, updatedObject)
+    return response.data
+}
+
+export default { getAll, createNew, updateVotes }

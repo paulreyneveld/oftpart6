@@ -1,6 +1,6 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { messageSelect } from '../reducers/messageReducer'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { messageSelect } from '../reducers/messageReducer'
 
 const Notification = () => {
   const style = {
@@ -9,22 +9,11 @@ const Notification = () => {
     borderWidth: 1
   }
 
-  const dispatch = useDispatch()
-
-  const messageToDisplay = useSelector(({ anecdotes, searchFilter }) => {
-    return anecdotes.find(anecdote => anecdote.id === searchFilter)
-  })
-
-  if (messageToDisplay) {
-    setTimeout(() => dispatch(messageSelect(null)), 3000)
-    return (
-      <div style={style}>
-        {messageToDisplay.content}
-      </div>
-    )
-  }
-
-  return null
+  return (
+    <div style={style}>
+    Something here. . . .
+  </div>
+  )
 }
 
 export default Notification

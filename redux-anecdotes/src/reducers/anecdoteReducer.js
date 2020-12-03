@@ -33,9 +33,7 @@ const reducer = (state = [], action) => {
   switch(action.type) {
     case 'INCREASE_VOTE': {
       const id = action.data.id;
-      console.log(id)
       const anecdoteToUpdate = state.find(n => n.id === id)
-      console.log(anecdoteToUpdate)
       const updatedAnecdote = {
         ...anecdoteToUpdate,
         votes: anecdoteToUpdate.votes + 1
@@ -43,12 +41,12 @@ const reducer = (state = [], action) => {
       return state.map(item => 
         item.id !== id ? item : updatedAnecdote)
     }
-      case 'ADD_ANECDOTE':{
-        const content = action.data.anecdote
-        return state.concat(content)
-      }
-      case 'INIT_ANECDOTES':
-        return action.data
+    case 'ADD_ANECDOTE': {
+      const content = action.data.anecdote
+      return state.concat(content)
+    }
+    case 'INIT_ANECDOTES':
+      return action.data
     default: 
       return state
   }

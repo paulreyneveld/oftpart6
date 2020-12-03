@@ -11,6 +11,8 @@ const AnecdoteList = () => {
       const newVoteNumber = (anecdoteToUpdate.votes + 1)
       dispatch(addVote(id, newVoteNumber))
     }
+
+
     
     return (
         <div>

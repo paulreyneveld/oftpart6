@@ -12,8 +12,8 @@ const AnecdoteList = () => {
     const vote = (id) => {
       const anecdoteToUpdate = anecdotes.find(n => n.id === id)
       const newVoteNumber = (anecdoteToUpdate.votes + 1)
-      anecdoteService.updateVotes(id, newVoteNumber)
-      dispatch(addVote(id))
+      // anecdoteService.updateVotes(id, newVoteNumber)
+      dispatch(addVote(id, newVoteNumber))
       dispatch(messageSelect(id))
     }
     

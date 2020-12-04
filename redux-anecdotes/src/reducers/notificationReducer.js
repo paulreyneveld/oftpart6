@@ -17,7 +17,7 @@ export const notificationSet = searchFilter => {
 
 export const notificationRemove = () => {
     return {
-        type: 'REMOVE_MESSAGE',
+        type: 'SET_MESSAGE',
         searchFilter: null
     }
 }

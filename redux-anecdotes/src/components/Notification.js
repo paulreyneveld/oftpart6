@@ -1,22 +1,30 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { notificationSelect } from '../reducers/notificationReducer'
+import { useSelector } from 'react-redux'
 
 const Notification = () => {
 
-  const data = useSelector(state => state)
-  console.log(data)
+  const notification = useSelector(state => {
+    const id = state.searchFilter
+    const anecdoteToDisplay = state.anecdotes.find(anecdote => String(anecdote.id) === id)
+    return anecdoteToDisplay
+  })
+
   const style = {
     border: 'solid',
     padding: 10,
     borderWidth: 1
   }
 
-  return (
-    <div style={style}>
-    Something here. . . .
-  </div>
-  )
+  if (notification) {
+    return (
+      <div style={style}>
+        {notification.content}
+      </div>
+    )
+  }
+
+  return null
+
 }
 
 export default Notification

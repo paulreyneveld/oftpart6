@@ -1,8 +1,11 @@
 import React from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { messageSelect } from '../reducers/messageReducer'
+import { useSelector, useDispatch } from 'react-redux'
+import { notificationSelect } from '../reducers/notificationReducer'
 
 const Notification = () => {
+
+  const data = useSelector(state => state)
+  console.log(data)
   const style = {
     border: 'solid',
     padding: 10,

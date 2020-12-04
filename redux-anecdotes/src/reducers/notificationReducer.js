@@ -1,6 +1,6 @@
 const notificationReducer = (state = null, action) => {
     switch(action.type) {
-        case 'SELECT_MESSAGE': {
+        case 'SET_MESSAGE': {
             return action.searchFilter
         }
         default: 
@@ -8,10 +8,17 @@ const notificationReducer = (state = null, action) => {
     }
 }
 
-export const notificationSelect = searchFilter => {
+export const notificationSet = searchFilter => {
     return {
-        type: 'SELECT_MESSAGE',
+        type: 'SET_MESSAGE',
         searchFilter
+    }
+}
+
+export const notificationRemove = () => {
+    return {
+        type: 'REMOVE_MESSAGE',
+        searchFilter: null
     }
 }
 

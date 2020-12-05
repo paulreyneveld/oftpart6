@@ -13,7 +13,6 @@ const AnecdoteList = () => {
       dispatch(addVote(id, newVoteNumber))
       setTimeout(() => dispatch(notificationRemove()), 3000)
       dispatch(notificationSet(id))
-      
     }
 
     return (

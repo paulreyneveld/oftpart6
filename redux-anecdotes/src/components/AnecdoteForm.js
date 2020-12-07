@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux'
 import { createAnecdote } from '../reducers/anecdoteReducer'
 import {notificationRemove, notificationSet} from '../reducers/notificationReducer'
-import store from '../store';
 
 const AnecdoteForm = () => {
     const dispatch = useDispatch()
@@ -12,10 +11,8 @@ const AnecdoteForm = () => {
         const content = event.target.anecdote.value;
         event.target.anecdote.value = '';
         await dispatch(createAnecdote(content))
-        const arrayLength = store.getState().anecdotes.length
-        const id = store.getState().anecdotes[arrayLength - 1].id
+        dispatch(notificationSet(content))
         setTimeout(() => dispatch(notificationRemove()), 3000)
-        dispatch(notificationSet(id))
       }
 
     return (

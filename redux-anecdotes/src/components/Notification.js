@@ -3,10 +3,15 @@ import { useSelector } from 'react-redux'
 
 const Notification = () => {
 
+  // const notification = useSelector(state => {
+  //   const id = state.searchFilter
+  //   const anecdoteToDisplay = state.anecdotes.find(anecdote => String(anecdote.id) === id)
+  //   return anecdoteToDisplay
+  // })
+
   const notification = useSelector(state => {
-    const id = state.searchFilter
-    const anecdoteToDisplay = state.anecdotes.find(anecdote => String(anecdote.id) === id)
-    return anecdoteToDisplay
+    console.log(state)
+    return state.notification
   })
 
   const style = {
@@ -18,7 +23,7 @@ const Notification = () => {
   if (notification) {
     return (
       <div style={style}>
-        {notification.content}
+        {notification}
       </div>
     )
   }

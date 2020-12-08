@@ -11,8 +11,8 @@ const AnecdoteList = () => {
       const anecdoteToUpdate = anecdotes.find(n => n.id === id)
       const newVoteNumber = (anecdoteToUpdate.votes + 1)
       dispatch(addVote(id, newVoteNumber))
-      setTimeout(() => dispatch(notificationRemove()), 3000)
-      dispatch(notificationSet(id))
+      // setTimeout(() => dispatch(notificationRemove()), 3000)
+      dispatch(notificationSet(anecdoteToUpdate.content, 3))
     }
 
     return (

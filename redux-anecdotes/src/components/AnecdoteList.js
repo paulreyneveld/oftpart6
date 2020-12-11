@@ -10,7 +10,7 @@ const AnecdoteList = (props) => {
       const anecdoteToUpdate = anecdotes.find(n => n.id === id)
       const newVoteNumber = (anecdoteToUpdate.votes + 1)
       props.addVote(id, newVoteNumber)
-      props.notificationSet(anecdoteToUpdate.content, 3)
+      props.notificationSet(anecdoteToUpdate.content, 5)
     }
     
 

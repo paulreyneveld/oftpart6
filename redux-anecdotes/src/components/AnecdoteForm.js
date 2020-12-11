@@ -11,7 +11,7 @@ const AnecdoteForm = (props) => {
         const content = event.target.anecdote.value;
         event.target.anecdote.value = '';
         await props.createAnecdote(content)
-        props.notificationSet(content, 3)
+        props.notificationSet(content, 5)
         // await dispatch(createAnecdote(content))
         // dispatch(notificationSet(content, 3))
       }

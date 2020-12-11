@@ -10,7 +10,7 @@ const notificationReducer = (state = null, action) => {
 
 export const notificationSet = (notification, delay) => {
     return async dispatch => {
-        setTimeout(() => dispatch(notificationRemove()), delay * 1000)
+        const timeoutID = setTimeout(() => dispatch(notificationRemove()), delay * 1000)
         dispatch({
             type: 'SET_MESSAGE',
             notification

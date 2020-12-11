@@ -29,6 +29,7 @@ const mapStateToProps = (state) => {
     anecdotes: state.anecdotes
   }
 }
+
 const mapDispatchToProps = {
   createAnecdote,
   notificationSet
